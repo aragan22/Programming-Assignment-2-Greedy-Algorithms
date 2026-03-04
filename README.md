@@ -192,11 +192,11 @@ Question 1: Empirical Comparison
 
 We used three nontrivial input files with at least 50 requests.
 
-Input File | k | m  | FIFO | LRU | OPTFF
------------------------------------------
-File1      | 3 | 60 | 60   | 60  | 32
-File2      | 3 | 54 | 19   | 11  | 11
-File3      | 3 | 60 | 56   | 54  | 27
+| Input File | k | m | FIFO | LRU | OPTFF |
+|------------|---|----|------|-----|-------|
+| File1 | 3 | 60 | 60 | 60 | 32 |
+| File2 | 3 | 54 | 19 | 11 | 11 |
+| File3 | 3 | 60 | 56 | 54 | 27 |
 
 Does OPTFF have the fewest misses?
 
@@ -304,17 +304,5 @@ Therefore no algorithm can produce fewer misses than OPTFF on any
 fixed request sequence.
 
 Thus OPTFF is optimal.
-
-
-------------------------------------------------------------
-NOTES
-------------------------------------------------------------
-
-All algorithms operate on the same request sequence to allow direct
-comparison of cache misses.
-
-The OPTFF implementation precomputes the next occurrence of each
-request so that it can determine which cached item will be used
-farthest in the future.
 
 ------------------------------------------------------------
