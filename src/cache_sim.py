@@ -5,7 +5,6 @@ from collections import deque, OrderedDict
 def simulate_fifo(k, reqs):
     """
     FIFO (First-In, First-Out)
-    Evict the item that has been in the cache the longest.
     """
     cache = set()
     order = deque()  # insertion order
@@ -34,10 +33,6 @@ def simulate_fifo(k, reqs):
 def simulate_lru(k, reqs):
     """
     LRU (Least Recently Used)
-    Evict the item whose most recent access time is the oldest.
-    Implemented with OrderedDict:
-      - keys = items in cache
-      - order from oldest (LRU) to newest (MRU)
     """
     cache = OrderedDict()
     misses = 0
@@ -60,8 +55,6 @@ def simulate_lru(k, reqs):
 def simulate_optff(k, reqs):
     """
     OPTFF (Belady’s Farthest-in-Future, optimal offline).
-    Evict the item whose *next* access is farthest in the future
-    (or never used again).
     """
     m = len(reqs)
 
